@@ -1,8 +1,8 @@
-# 📊 Grade Calculator
+# ðŸ“Š Grade Calculator
 
 A beautiful, organic-designed grade calculator web application that helps students calculate weighted averages, determine final exam requirements, and compute GPA with ease.
 
-## ✨ Features
+## âœ¨ Features
 
 ### Three Powerful Calculators
 1. **Grade Calculator** - Calculate weighted average grades from multiple assignments, homework, exams, and other coursework
@@ -10,15 +10,15 @@ A beautiful, organic-designed grade calculator web application that helps studen
 3. **GPA Calculator** - Calculate weighted GPA based on courses with different credit hours or points
 
 ### Smart Functionality
-- 📊 **Real-time Calculations** - Results update as you enter data
-- 💾 **Save & Load** - Save multiple calculations with custom names to browser storage
-- 📁 **Manage Saves** - View all saved calculations, load them, or delete them
-- 📄 **Open New Tabs** - Calculate multiple scenarios simultaneously in separate browser tabs
-- 🎛️ **Decimal Precision** - Choose 1-4 decimal places for result accuracy
-- ➕ **Dynamic Rows** - Add or remove grades/courses as needed
-- 📱 **Fully Responsive** - Works seamlessly on desktop, tablet, and mobile devices
+- ðŸ“Š **Real-time Calculations** - Results update as you enter data
+- ðŸ’¾ **Save & Load** - Save multiple calculations with custom names to browser storage
+- ðŸ“ **Manage Saves** - View all saved calculations, load them, or delete them
+- ðŸ“„ **Open New Tabs** - Calculate multiple scenarios simultaneously in separate browser tabs
+- ðŸŽ›ï¸ **Decimal Precision** - Choose 1-4 decimal places for result accuracy
+- âž• **Dynamic Rows** - Add or remove grades/courses as needed
+- ðŸ“± **Fully Responsive** - Works seamlessly on desktop, tablet, and mobile devices
 
-## 🎨 Design System
+## ðŸŽ¨ Design System
 
 ### Organic / Natural Design Philosophy
 The interface embraces a warm, natural aesthetic inspired by:
@@ -47,7 +47,7 @@ The interface embraces a warm, natural aesthetic inspired by:
 - **Smooth Interactions** - All transitions use 300-500ms durations for natural feel
 - **Rounded Pills** - All buttons and inputs use 50px border-radius for warmth
 
-## 🚀 Quick Start
+## ðŸš€ Quick Start
 
 ### Opening the Calculator
 1. Download or clone the repository
@@ -80,35 +80,35 @@ The interface embraces a warm, natural aesthetic inspired by:
 ### Saving & Loading Calculations
 
 **Save Current Calculation:**
-1. Click the "💾 Save Current" button
+1. Click the "ðŸ’¾ Save Current" button
 2. Enter a name (e.g., "Fall 2024 Semester")
 3. Click "Save"
 
 **Load Saved Calculation:**
-1. Click the "📁 Manage Saves" button
+1. Click the "ðŸ“ Manage Saves" button
 2. View all saved calculations with timestamps
 3. Click "Load" next to any calculation to restore it
 4. Click "Delete" to remove a saved calculation
 
 **Open New Tab:**
-- Click "📄 Open New Tab" to calculate multiple scenarios simultaneously
+- Click "ðŸ“„ Open New Tab" to calculate multiple scenarios simultaneously
 
-## 📐 How the Math Works
+## ðŸ“ How the Math Works
 
 ### Weighted Grade Calculation
 ```
-Weighted Average = (w₁×g₁ + w₂×g₂ + ... wₙ×gₙ) / (w₁ + w₂ + ... wₙ)
+Weighted Average = (wâ‚Ã—gâ‚ + wâ‚‚Ã—gâ‚‚ + ... wâ‚™Ã—gâ‚™) / (wâ‚ + wâ‚‚ + ... wâ‚™)
 ```
 
 **Example:**
-- Math (Grade 85, Weight 3) = 85 × 3 = 255
-- English (Grade 90, Weight 3) = 90 × 3 = 270
-- Science (Grade 88, Weight 4) = 88 × 4 = 352
+- Math (Grade 85, Weight 3) = 85 Ã— 3 = 255
+- English (Grade 90, Weight 3) = 90 Ã— 3 = 270
+- Science (Grade 88, Weight 4) = 88 Ã— 4 = 352
 - **Total**: (255 + 270 + 352) / (3 + 3 + 4) = 877 / 10 = **87.7**
 
 ### Final Exam Grade Required
 ```
-Final Grade Needed = (Target Grade - Current Grade × Current Weight%) / Final Exam Weight%
+Final Grade Needed = (Target Grade - Current Grade Ã— Current Weight%) / Final Exam Weight%
 ```
 
 **Example:**
@@ -116,9 +116,9 @@ Final Grade Needed = (Target Grade - Current Grade × Current Weight%) / Final E
 - Current Weight: 80%
 - Target Grade: 90%
 - Final Exam Weight: 20%
-- **Required**: (90 - 82 × 0.8) / 0.2 = (90 - 65.6) / 0.2 = **122%** (impossible)
+- **Required**: (90 - 82 Ã— 0.8) / 0.2 = (90 - 65.6) / 0.2 = **122%** (impossible)
 
-## 🎯 Design Details
+## ðŸŽ¯ Design Details
 
 ### Components
 
@@ -154,10 +154,10 @@ Final Grade Needed = (Target Grade - Current Grade × Current Weight%) / Final E
 
 ### Responsive Breakpoints
 - **Desktop (>768px)**: Full layout with side-by-side grids
-- **Tablet (≤768px)**: Single column layout, full-width buttons
-- **Mobile (≤480px)**: Compact spacing, optimized touch targets
+- **Tablet (â‰¤768px)**: Single column layout, full-width buttons
+- **Mobile (â‰¤480px)**: Compact spacing, optimized touch targets
 
-## 🔧 Customization
+## ðŸ”§ Customization
 
 ### Changing Colors
 Edit the CSS variables in the `<style>` section:
@@ -184,7 +184,7 @@ Adjust shadow variables:
 --shadow-float: 0 10px 40px -10px rgba(193, 140, 93, 0.2);
 ```
 
-## 💾 Data Storage
+## ðŸ’¾ Data Storage
 
 All calculations are saved to **browser local storage** (`localStorage`):
 - Saved under key: `gradeCalculatorSaves`
@@ -208,24 +208,24 @@ All calculations are saved to **browser local storage** (`localStorage`):
 }
 ```
 
-## 🌐 Browser Support
+## ðŸŒ Browser Support
 - Chrome/Chromium (recommended)
 - Firefox
 - Safari
 - Edge
 - Any modern browser with ES6+ JavaScript support
 
-## ♿ Accessibility
+## â™¿ Accessibility
 
 - **Contrast Ratios**: WCAG AA/AAA compliant
   - Primary text on background: 14.5:1 (AAA)
   - Moss on background: 6.2:1 (AA)
 - **Focus States**: Clear 2px ring with offset for keyboard navigation
-- **Touch Targets**: All interactive elements ≥48px height
+- **Touch Targets**: All interactive elements â‰¥48px height
 - **Semantic HTML**: Proper heading hierarchy, form labels, alt text
 - **Keyboard Navigation**: Fully keyboard accessible, all features usable without mouse
 
-## 📝 Tips & Tricks
+## ðŸ“ Tips & Tricks
 
 ### Maximize Accuracy
 - Use consistent decimal places across all inputs
@@ -242,7 +242,7 @@ All calculations are saved to **browser local storage** (`localStorage`):
 - Identify which assignments have highest weight
 - Focus study time on weighted high-value assessments
 
-## 🐛 Troubleshooting
+## ðŸ› Troubleshooting
 
 **Calculations showing 0?**
 - Ensure you've entered both grade and weight values
@@ -262,11 +262,11 @@ All calculations are saved to **browser local storage** (`localStorage`):
 - Rotate device to landscape for better table view
 - Try different browser if issues persist
 
-## 📄 License
+## ðŸ“„ License
 
-Free to use, modify, and distribute. Built with ❤️ using the organic design philosophy.
+Free to use, modify, and distribute. Built with â¤ï¸ using the organic design philosophy.
 
-## 🎓 Educational Use
+## ðŸŽ“ Educational Use
 
 Perfect for:
 - Students tracking semester grades
@@ -274,15 +274,12 @@ Perfect for:
 - Academic advisors planning course loads
 - Parents monitoring student progress
 
-## 🌱 Design Philosophy
+## ðŸŒ± Design Philosophy
 
-This calculator embodies the principle that **"there are no straight lines in nature."** Every interaction feels organic, warm, and human—not cold or mechanical. The soft shadows, rounded shapes, and earth tones create a peaceful, welcoming space for academic planning.
+This calculator embodies the principle that **"there are no straight lines in nature."** Every interaction feels organic, warm, and humanâ€”not cold or mechanical. The soft shadows, rounded shapes, and earth tones create a peaceful, welcoming space for academic planning.
 
 ---
 
 **Version**: 1.0  
 **Last Updated**: January 8, 2026  
 **Created by**: Grade Calculator Team
-
-#   G r a d e C a l c u l a t o r  
- 

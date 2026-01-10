@@ -75,9 +75,13 @@ Inspired by:
 
 ### Final Grade Calculator
 1. Open **Final Grade Calculator** tab  
-2. Enter current grade and target grade  
-3. Enter current + final exam weights (must total 100%)  
-4. Calculate required final exam grade  
+2. **Optional**: Toggle **Live Updates** for real-time calculations as you type  
+3. Enter current grade and target grade  
+4. Enter current + final exam weights (must total 100%)  
+5. If Live Updates is OFF, click the button to calculate  
+6. View required final exam grade  
+   - **Live Updates enabled**: Results update instantly as you change values  
+   - **Live Updates disabled**: Click button to calculate on demand  
 
 ### GPA Calculator
 1. Open **GPA Calculator** tab  

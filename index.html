@@ -802,6 +802,79 @@
             line-height: 1.6;
             font-weight: 500;
         }
+
+        /* Toggle Switch */
+        .toggle-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+            padding: 16px 20px;
+            background: linear-gradient(135deg, rgba(93, 112, 82, 0.05) 0%, rgba(193, 140, 93, 0.05) 100%);
+            border-radius: 24px;
+            border: 1px solid rgba(222, 216, 207, 0.3);
+        }
+
+        .toggle-label {
+            font-weight: 600;
+            color: var(--fg);
+            font-size: 0.95em;
+        }
+
+        .toggle-switch {
+            position: relative;
+            display: inline-flex;
+            width: 52px;
+            height: 28px;
+            background: var(--border);
+            border-radius: 14px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            border: 2px solid var(--border);
+        }
+
+        .toggle-switch input {
+            display: none;
+        }
+
+        .toggle-switch input:checked + .toggle-slider {
+            transform: translateX(24px);
+            background: var(--primary);
+        }
+
+        .toggle-switch input:checked ~ .toggle-switch-bg {
+            background: var(--primary);
+        }
+
+        .toggle-slider {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 22px;
+            height: 22px;
+            background: white;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            z-index: 2;
+        }
+
+        .toggle-switch-bg {
+            position: absolute;
+            inset: 0;
+            background: var(--border);
+            border-radius: 12px;
+            transition: background 0.3s ease;
+            z-index: 1;
+        }
+
+        .toggle-switch.active {
+            background: var(--primary);
+        }
+
+        .toggle-switch.active .toggle-slider {
+            background: white;
+            transform: translateX(24px);
+        }
     </style>
 </head>
 <body>
@@ -899,28 +972,37 @@
             <h2>Final Grade Calculator</h2>
             <p>Calculate the grade needed on your final exam</p>
 
+            <div class="toggle-container">
+                <span class="toggle-label">Live Updates</span>
+                <label class="toggle-switch" id="liveUpdateToggle">
+                    <input type="checkbox" id="liveUpdateToggleInput" onchange="toggleLiveUpdates()">
+                    <span class="toggle-slider"></span>
+                    <div class="toggle-switch-bg"></div>
+                </label>
+            </div>
+
             <div class="grid-2">
                 <div class="form-group">
                     <label>Current Grade (%):</label>
-                    <input type="number" id="currentGrade" step="0.1" min="0" max="100" placeholder="0" value="0">
+                    <input type="number" id="currentGrade" step="0.1" min="0" max="100" placeholder="0" value="0" onchange="handleFinalGradeChange()">
                 </div>
                 <div class="form-group">
                     <label>Target Grade (%):</label>
-                    <input type="number" id="targetGrade" step="0.1" min="0" max="100" placeholder="0" value="80">
+                    <input type="number" id="targetGrade" step="0.1" min="0" max="100" placeholder="0" value="80" onchange="handleFinalGradeChange()">
                 </div>
             </div>
 
             <div class="form-group">
                 <label>Current Grade Weight (%):</label>
-                <input type="number" id="currentGradeWeight" step="0.1" min="0" max="100" placeholder="0" value="80">
+                <input type="number" id="currentGradeWeight" step="0.1" min="0" max="100" placeholder="0" value="80" onchange="handleFinalGradeChange()">
             </div>
 
             <div class="form-group">
                 <label>Final Exam Weight (%):</label>
-                <input type="number" id="finalExamWeight" step="0.1" min="0" max="100" placeholder="0" value="20">
+                <input type="number" id="finalExamWeight" step="0.1" min="0" max="100" placeholder="0" value="20" onchange="handleFinalGradeChange()">
             </div>
 
-            <button onclick="calculateFinalGradeNeeded()" style="width: 100%; padding: 14px; font-size: 1.05em;">Calculate Final Exam Grade Needed</button>
+            <button id="calculateFinalBtn" onclick="calculateFinalGradeNeeded()" style="width: 100%; padding: 14px; font-size: 1.05em;">Calculate Final Exam Grade Needed</button>
 
             <div class="results" id="finalGradeResults" style="display: none;">
                 <div class="result-item">
@@ -1126,6 +1208,25 @@
         }
 
         // Final Grade Calculator Functions
+        let liveUpdatesEnabled = false;
+
+        function toggleLiveUpdates() {
+            liveUpdatesEnabled = document.getElementById('liveUpdateToggleInput').checked;
+            const toggleElement = document.getElementById('liveUpdateToggle');
+            
+            if (liveUpdatesEnabled) {
+                toggleElement.classList.add('active');
+            } else {
+                toggleElement.classList.remove('active');
+            }
+        }
+
+        function handleFinalGradeChange() {
+            if (liveUpdatesEnabled) {
+                calculateFinalGradeNeeded();
+            }
+        }
+
         function calculateFinalGradeNeeded() {
             const currentGrade = parseFloat(document.getElementById('currentGrade').value) || 0;
             const targetGrade = parseFloat(document.getElementById('targetGrade').value) || 0;

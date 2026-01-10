@@ -903,6 +903,15 @@
             <h2>Grade Calculator</h2>
             <p>Calculate your weighted average grade</p>
 
+            <div class="toggle-container">
+                <span class="toggle-label">Calculate Additional Grade Needed</span>
+                <label class="toggle-switch" id="additionalGradeToggle">
+                    <input type="checkbox" id="additionalGradeToggleInput" onchange="toggleAdditionalGrade()">
+                    <span class="toggle-slider"></span>
+                    <div class="toggle-switch-bg"></div>
+                </label>
+            </div>
+
             <div class="form-group">
                 <label>Select decimal places for result:</label>
                 <select id="decimalPlaces" class="decimal-select" onchange="calculateGrade()">
@@ -946,20 +955,19 @@
                 </tbody>
             </table>
 
-            <div class="grid-2">
-                <div class="form-group">
-                    <label>Find additional grade needed to get average of (%):</label>
-                    <input type="number" id="targetAverage" step="0.1" min="0" max="100" placeholder="80" value="80">
-                </div>
-                <button onclick="calculateAdditionalGrade()" style="align-self: flex-end; margin-bottom: 0; padding: 15px;">Calculate Additional Grade</button>
-            </div>
-
             <div class="results" id="gradeResults" style="display: none;">
                 <div class="result-item">
-                    <span class="result-label">Average Grade:</span>
+                    <span class="result-label">Current Average Grade:</span>
                     <span class="result-value" id="averageGrade">0.00%</span>
                 </div>
-                <div id="additionalGradeResult"></div>
+                <div id="additionalGradeContainer" style="display: none; margin-top: 20px; border-top: 1px solid rgba(222, 216, 207, 0.3); padding-top: 20px;">
+                    <div class="form-group">
+                        <label>Target average grade (%):</label>
+                        <input type="number" id="targetAverage" step="0.1" min="0" max="100" placeholder="80" value="80" onchange="calculateAdditionalGrade()">
+                    </div>
+                    <button onclick="calculateAdditionalGrade()" style="width: 100%; padding: 14px; font-size: 1.05em;">Calculate Additional Grade</button>
+                    <div id="additionalGradeResult" style="margin-top: 16px;"></div>
+                </div>
             </div>
 
             <div class="calculation-note">
@@ -1143,6 +1151,22 @@
         function removeGradeRow(btn) {
             btn.closest('tr').remove();
             calculateGrade();
+        }
+
+        let additionalGradeEnabled = false;
+
+        function toggleAdditionalGrade() {
+            additionalGradeEnabled = document.getElementById('additionalGradeToggleInput').checked;
+            const toggleElement = document.getElementById('additionalGradeToggle');
+            const additionalContainer = document.getElementById('additionalGradeContainer');
+            
+            if (additionalGradeEnabled) {
+                toggleElement.classList.add('active');
+                additionalContainer.style.display = 'block';
+            } else {
+                toggleElement.classList.remove('active');
+                additionalContainer.style.display = 'none';
+            }
         }
 
         function calculateGrade() {

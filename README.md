@@ -68,10 +68,13 @@ Inspired by:
 
 ### Grade Calculator
 1. Open **Grade Calculator** tab  
-2. Enter grades (%) and weights (%)  
+2. Enter grades (%) and weights (%) in the table  
 3. Add or remove rows as needed  
-4. View weighted average instantly  
-5. Set a target and calculate additional grade needed  
+4. **Current Average Grade** displays automatically and updates in real-time  
+5. **Optional**: Toggle **Calculate Additional Grade Needed** to enable:
+   - Set a target average grade (%)
+   - Click button to see what grade you need to reach your target
+   - Hide this section by toggling OFF when not needed  
 
 ### Final Grade Calculator
 1. Open **Final Grade Calculator** tab  
